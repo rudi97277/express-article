@@ -78,6 +78,12 @@ Once started, the app will be available at:
 http://localhost:9999
 ```
 
+and mongodb will be available at:
+
+```
+localhost:27999
+```
+
 ### 5. Server Deployment
 
 You can deploy this project on a remote server using either a manual Node.js setup or Docker Compose.
