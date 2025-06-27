@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "9999:3000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/myskill
+    depends_on:
+      - mongo
+    restart: always
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "npm install && npm run build && npm start"
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1048M
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27999:27017"
+    volumes:
+      - mongo-data:/data/db
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1048M
+
+volumes:
+  mongo-data:

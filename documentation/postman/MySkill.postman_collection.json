@@ -1,0 +1,6231 @@
+{
+	"info": {
+		"_postman_id": "260d736a-08d5-4fa9-b985-c177cf003baf",
+		"name": "MySkill",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29750099",
+		"_collection_link": "https://red-space-59247.postman.co/workspace/Team-Workspace~150ea653-5e45-4c0c-89dd-42b5441135af/collection/29750099-260d736a-08d5-4fa9-b985-c177cf003baf?action=share&source=collection_link&creator=29750099"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData =  pm.response.json();\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.data.token);   "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"myskill\",\r\n    \"password\": \"12345678\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						},
+						"description": "Request param\n\n``` json\n{\n    \"username\":\"required|string\",\n    \"password\": \"required|string|min:8\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"rudi97276\",\r\n    \"password\": \"halo1234\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "996"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 10:52:56 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751021621"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "996"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "44"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "61fc74d7-0b20-4c4b-a4bf-faf06952b410"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "541"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21d-z7EGQ0R4WMWcWoIAsyWFo5Afe0M\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODVlNTI5MWM1MzdjYzhiOTcyZjkyZTgiLCJ1c2VybmFtZSI6InJ1ZGk5NzI3NiIsIm5hbWUiOiJydWRpYW50byIsImp0aSI6ImM0M2YyNjljLTU2YTQtNDM0MC05ZGYzLTI1ZTUyY2FlMWE4YyIsImlhdCI6MTc1MTAyMTU3NiwiZXhwIjoxNzUxMDIyNTc2fQ.JRa4XmWLAdwZIh2DCycdEuTFQjFuvHo0fOZeNpaPNqw\",\n        \"user\": {\n            \"_id\": \"685e5291c537cc8b972f92e8\",\n            \"name\": \"rudianto\",\n            \"username\": \"rudi97276\",\n            \"createdAt\": \"2025-06-27T08:13:05.771Z\",\n            \"updatedAt\": \"2025-06-27T10:35:07.201Z\",\n            \"__v\": 0\n        }\n    },\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "400 Invalid Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"rudi97276\",\r\n    \"password\": \"halo1232\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 11:05:14 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751022375"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "3a25dffc-a82f-463d-a376-cd6012f7ca5d"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-7HpoYelRapwmO5g+ZTH40Ijfk/4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid username or password\",\n    \"data\": null,\n    \"statusCode\": 400\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "995"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 11:05:52 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751022375"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "995"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "23"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "323cdb8c-d86d-437c-b73e-8485888dc603"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-bwKS3WbCR/waM6JjoVyxFeu4l1E\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": null,\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"logout"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 11:00:37 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751022095"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "57"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "9a600d3f-692c-4166-b2b4-d7b9e85ece67"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-l72wtIBHI+1ENQGw6Q81HpwzLk4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Unauthorized\",\n    \"data\": null,\n    \"statusCode\": 401\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 08:11:07 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751011928"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "eefc2dd8-3603-43bf-9557-5e646a43a816"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ce-palS8WSqEfZ8TaNHxgUeY/8RxRo\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": [\n        {\n            \"_id\": \"685e4432b63b795cc5d18db8\",\n            \"name\": \"rudianto\",\n            \"username\": \"rudi9727\",\n            \"createdAt\": \"2025-06-27T07:11:46.279Z\",\n            \"updatedAt\": \"2025-06-27T07:11:46.279Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/:userId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "685e5291c537cc8b972f92e8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/:userId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "685e4432b63b795cc5d18db8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "996"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 08:12:00 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751011928"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "996"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "7"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "2da4df70-a141-47af-92aa-a3e99ef0b8a4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "204"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cc-lgU5V1zcmwoJQ+jxlfJPG8n03D0\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"_id\": \"685e4432b63b795cc5d18db8\",\n        \"name\": \"rudianto\",\n        \"username\": \"rudi9727\",\n        \"createdAt\": \"2025-06-27T07:11:46.279Z\",\n        \"updatedAt\": \"2025-06-27T07:11:46.279Z\"\n    }\n}"
+						},
+						{
+							"name": "400 Invalid Input",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/:userId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "685e4432b63b795cc5d18db8s"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 08:12:18 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751011999"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "54c7c4e4-56de-48b7-9d2d-5578c7b81f51"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7c-NFI3jw89vDecyIzVqE6u+pd6AHQ\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid input: userId String must contain exactly 24 character(s)\",\n    \"data\": null,\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/:userId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "685e4432b63b795cc5d18db7"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 08:14:41 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751012142"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "c639f169-3cb5-47bf-8782-ed5f9a6d293c"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-Av9/CuGMlDPVvsE60mZ8wog3QJA\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"User not found\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"rudianto\",\r\n    \"username\": \"rudi97276\",\r\n    \"password\" : \"halo1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						},
+						"description": "Request body\n\n``` json\n{\n    \"name\":\"required|string\",\n    \"username\": \"required|string|min:8\",\n    \"password\" : \"required|string|min:8\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"rudianto\",\r\n    \"username\": \"rudi97276\",\r\n    \"password\" : \"halo1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "995"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 08:13:05 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751011999"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "995"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "13"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "b507d8cc-6a77-4276-b620-eeb9cbe70441"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "213"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d5-B9eDrLUtMCMu6Kj62wk96n+C+kY\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"name\": \"rudianto\",\n        \"username\": \"rudi97276\",\n        \"_id\": \"685e5291c537cc8b972f92e8\",\n        \"createdAt\": \"2025-06-27T08:13:05.771Z\",\n        \"updatedAt\": \"2025-06-27T08:13:05.771Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "400 Invalid Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"rudiant\",\r\n    \"username\": \"rudi9727\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 08:12:43 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751011999"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "35"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "3af2822f-6c78-4543-83d9-fa269c658ad8"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "91"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5b-FuLMOy5j0qlEJ8kMBsfLDeZDSSw\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid input: password Required\",\n    \"data\": null,\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "409 Duplicate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"rudianto\",\r\n    \"username\": \"rudi97276\",\r\n    \"password\" : \"halo1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 08:16:25 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751012246"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "655bf2ea-56e6-46e4-8a12-9598f95e6910"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "106"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6a-9iQGAryMZ0Mci7l7GynxS0QR06o\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Duplicate value for field 'username': rudi97276\",\n    \"data\": null,\n    \"statusCode\": 409\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"heheh\",\r\n    \"username\": \"asdadsd\",\r\n    \"password\" : \"halo1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/:userId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "685e5291c537cc8b972f92e8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"heheh\",\r\n    \"username\": \"asdadsd\",\r\n    \"password\" : \"halo1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/:userId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "685e5291c537cc8b972f92e8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 11:29:47 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751023848"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "5b01cf10-7456-4f8a-b3f9-4e248b07d614"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "225"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e1-XyoJalH+0OmsDehp1fNgB44oLq0\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"_id\": \"685e5291c537cc8b972f92e8\",\n        \"name\": \"heheh\",\n        \"username\": \"asdadsd\",\n        \"createdAt\": \"2025-06-27T08:13:05.771Z\",\n        \"updatedAt\": \"2025-06-27T11:29:00.360Z\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "400 Invalid Input",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"heheh\",\r\n    \"username\": \"asdadsd\",\r\n    \"password\" : \"halo1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/:userId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "685e5291c537cc8b972f92e8"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 11:30:31 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751023892"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "29306400-ce4d-4c5a-b112-81187f4bde5b"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7e-PwVQiwgOSU383TXek2ShUTJ8z+k\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid input: password String must contain at least 8 character(s)\",\n    \"data\": null,\n    \"statusCode\": 400\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/:userId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "685e5291c537cc8b972f92e8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/:userId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "685e5291c537cc8b972f92e8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "997"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 11:34:41 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751024094"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "997"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "12"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "632aa057-40af-43f9-b12f-be9c1eda0970"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "225"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e1-2muyHr7nal5vvSmR9AOyGhXPgnY\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"_id\": \"685e5291c537cc8b972f92e8\",\n        \"name\": \"heheh\",\n        \"username\": \"asdadsd\",\n        \"createdAt\": \"2025-06-27T08:13:05.771Z\",\n        \"updatedAt\": \"2025-06-27T11:30:02.236Z\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/:userId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "685e4432b63b795cc5d18db7"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 11:33:53 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751024094"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "757cd738-2a2b-4c29-a2c2-f36d28c0852c"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-6mkB8iMpK/v63X91EplyLRxuhMI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Can only delete yourself\",\n    \"data\": null,\n    \"statusCode\": 400\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"draftx\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/articles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							]
+						},
+						"description": "Request body\n\n``` json\n{\n    \"title\":\"required|string\",\n    \"content\": \"required|string\",\n    \"status\" : \"required|enum:draft,published\"\n}\n ```"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"draft\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "996"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 12:21:29 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751026914"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "996"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "25"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "3674956c-fbe6-4eae-8acc-0941a93715e2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "336"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"150-xqzTwd0SpG/R031FH8Yg4+WChKE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"title\": \"Indonesia menjadi negara maju\",\n        \"status\": \"draft\",\n        \"user\": {\n            \"_id\": \"685e4432b63b795cc5d18db8\",\n            \"name\": \"rudianto\",\n            \"username\": \"rudi9727\",\n            \"createdAt\": \"2025-06-27T07:11:46.279Z\",\n            \"updatedAt\": \"2025-06-27T12:21:21.174Z\",\n            \"__v\": 0\n        },\n        \"_id\": \"685e8cc90459b9ffa2ea8176\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "400 Invalid Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"draftx\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 12:30:40 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751027501"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "8c4232db-4700-4a58-b177-d21c5af914d2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "150"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"96-/JXoXcMMVH5PBnhFfe27y3JkSi8\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid input: status Invalid enum value. Expected 'draft' | 'published', received 'draftx'\",\n    \"data\": null,\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"draftx\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 12:31:42 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751027563"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "ba48b2ad-9184-4750-9042-9b797ba28951"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-l72wtIBHI+1ENQGw6Q81HpwzLk4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Unauthorized\",\n    \"data\": null,\n    \"statusCode\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"published\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/articles/:articleId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								":articleId"
+							],
+							"variable": [
+								{
+									"key": "articleId",
+									"value": "685e8780bc447fc5fa0f233f"
+								}
+							]
+						},
+						"description": "Request body\n\n``` json\n{\n    \"title\":\"required|string\",\n    \"content\": \"required|string\",\n    \"status\" : \"required|enum:draft,published\"\n}\n ```"
+					},
+					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"published\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles/:articleId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles",
+										":articleId"
+									],
+									"variable": [
+										{
+											"key": "articleId",
+											"value": "685e8780bc447fc5fa0f233f"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 13:06:12 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751029633"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "7beabe0e-ebac-4f08-8c62-b124263061d9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-l72wtIBHI+1ENQGw6Q81HpwzLk4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Unauthorized\",\n    \"data\": null,\n    \"statusCode\": 401\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"published\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles/:articleId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles",
+										":articleId"
+									],
+									"variable": [
+										{
+											"key": "articleId",
+											"value": "685e8780bc447fc5fa0f233f"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 13:06:47 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751029633"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "26"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "40474d0d-2ee5-4712-81cf-2ea642eece44"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-Wcf1luP6tsuyOnxPSzu3dvwuAJo\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Can only update your article\",\n    \"data\": null,\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"published\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles/:articleId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles",
+										":articleId"
+									],
+									"variable": [
+										{
+											"key": "articleId",
+											"value": "685e8780bc447fc5fa0f233f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 13:07:20 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751029701"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "0f59b1c5-37aa-4ea6-b68c-9694d55b08ed"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ce-7dZn/FFryUADLgUmUrwkCTzcCSI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"_id\": \"685e8780bc447fc5fa0f233f\",\n        \"title\": \"Indonesia menjadi negara maju\",\n        \"status\": \"published\",\n        \"user\": \"685e4432b63b795cc5d18db8\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/articles/:articleId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								":articleId"
+							],
+							"variable": [
+								{
+									"key": "articleId",
+									"value": "685e8780bc447fc5fa0f233f"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"published\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles/:articleId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles",
+										":articleId"
+									],
+									"variable": [
+										{
+											"key": "articleId",
+											"value": "685e8780bc447fc5fa0f233f"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 13:06:12 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751029633"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "7beabe0e-ebac-4f08-8c62-b124263061d9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-l72wtIBHI+1ENQGw6Q81HpwzLk4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Unauthorized\",\n    \"data\": null,\n    \"statusCode\": 401\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"published\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles/:articleId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles",
+										":articleId"
+									],
+									"variable": [
+										{
+											"key": "articleId",
+											"value": "685e8780bc447fc5fa0f233f"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 13:06:47 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751029633"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "26"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "40474d0d-2ee5-4712-81cf-2ea642eece44"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-Wcf1luP6tsuyOnxPSzu3dvwuAJo\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Can only update your article\",\n    \"data\": null,\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Indonesia menjadi negara maju\",\r\n    \"content\": \"Indonesia, merupakan sebuah negara dengan jumlah penduduk yang cukup besar.\",\r\n    \"status\" : \"published\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles/:articleId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles",
+										":articleId"
+									],
+									"variable": [
+										{
+											"key": "articleId",
+											"value": "685e8780bc447fc5fa0f233f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 13:07:20 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751029701"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "0f59b1c5-37aa-4ea6-b68c-9694d55b08ed"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ce-7dZn/FFryUADLgUmUrwkCTzcCSI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"_id\": \"685e8780bc447fc5fa0f233f\",\n        \"title\": \"Indonesia menjadi negara maju\",\n        \"status\": \"published\",\n        \"user\": \"685e4432b63b795cc5d18db8\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/articles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK No Auth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 12:28:26 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751027364"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "57"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "a561ea23-800c-4edc-b5c1-7f6d4bf6cdac"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "208"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d0-qHh1epS7wDomOey2O6G4p5lJR9Q\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": [\n        {\n            \"_id\": \"685e8cc90459b9ffa2ea8176\",\n            \"title\": \"Indonesia menjadi negara maju\",\n            \"status\": \"published\",\n            \"user\": \"685e4432b63b795cc5d18db8\",\n            \"__v\": 0\n        }\n    ],\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "200 OK Auth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "997"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 12:28:40 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751027364"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "997"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "43"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "d18c04e5-3e01-4d0e-8de6-abe868cb44b7"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "342"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"156-agXG5zq/YLEsd/zSvzkMkN2IlAE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": [\n        {\n            \"_id\": \"685e8780bc447fc5fa0f233f\",\n            \"title\": \"Indonesia menjadi negara maju\",\n            \"status\": \"draft\",\n            \"user\": \"685e4432b63b795cc5d18db8\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"685e8cc90459b9ffa2ea8176\",\n            \"title\": \"Indonesia menjadi negara maju\",\n            \"status\": \"published\",\n            \"user\": \"685e4432b63b795cc5d18db8\",\n            \"__v\": 0\n        }\n    ],\n    \"statusCode\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/articles/:articleId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								":articleId"
+							],
+							"variable": [
+								{
+									"key": "articleId",
+									"value": "685e8cc90459b9ffa2ea8176"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK Auth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles/:articleId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles",
+										":articleId"
+									],
+									"variable": [
+										{
+											"key": "articleId",
+											"value": "685e8780bc447fc5fa0f233f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "997"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 12:42:40 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751028207"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "997"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "46"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "b5700441-9274-4ff1-bbb7-49b929578e34"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "202"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ca-c2LVVqBo018u5fbLE/de3Bqov9o\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"_id\": \"685e8780bc447fc5fa0f233f\",\n        \"title\": \"Indonesia menjadi negara maju\",\n        \"status\": \"draft\",\n        \"user\": \"685e4432b63b795cc5d18db8\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "200 OK No Auth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles/:articleId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles",
+										":articleId"
+									],
+									"variable": [
+										{
+											"key": "articleId",
+											"value": "685e8cc90459b9ffa2ea8176"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 12:44:09 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751028274"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "25"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "ae8bd521-d82e-40f2-b451-5882504afd83"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ce-HM9TE2mcreNcpnP9CDZOfTawgtU\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"_id\": \"685e8cc90459b9ffa2ea8176\",\n        \"title\": \"Indonesia menjadi negara maju\",\n        \"status\": \"published\",\n        \"user\": \"685e4432b63b795cc5d18db8\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "404 Not Found No Auth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/articles/:articleId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles",
+										":articleId"
+									],
+									"variable": [
+										{
+											"key": "articleId",
+											"value": "685e8780bc447fc5fa0f233f"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 12:43:33 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751028274"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "bd9ce696-1e27-4c32-b20c-7edfc5b01d0d"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-4WG7Ia3uhM4SjExhNkWIU1XF2Es\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Article not found\",\n    \"data\": null,\n    \"statusCode\": 404\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Page View",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"articleId\" : \"685ea2e40445a63e16b44274\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/page-views",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"page-views"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"articleId\" : \"685ea2e40445a63e16b44274\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/page-views",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"page-views"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "997"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 14:15:03 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751033751"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "997"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "47"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "f3d7d7fe-bd30-4ebc-96ab-1937ae1237f5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "295"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"127-61sku49JK2jYgchgwfGjBPGOLAo\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"article\": {\n            \"_id\": \"685ea2e40445a63e16b44274\",\n            \"title\": \"Indonesia menjadi negara maju\",\n            \"status\": \"published\",\n            \"user\": \"685e4432b63b795cc5d18db8\",\n            \"__v\": 0\n        },\n        \"viewAt\": \"2025-06-27T14:15:03.894Z\",\n        \"_id\": \"685ea76795a0ec9c99be2ea6\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Count",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/page-views/count?articleId=685ea2e40445a63e16b44274&startAt=2025-06-21T14:15:39.639Z&endAt=2025-06-29T14:48:05.826Z",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"page-views",
+								"count"
+							],
+							"query": [
+								{
+									"key": "articleId",
+									"value": "685ea2e40445a63e16b44274"
+								},
+								{
+									"key": "startAt",
+									"value": "2025-06-21T14:15:39.639Z"
+								},
+								{
+									"key": "endAt",
+									"value": "2025-06-29T14:48:05.826Z"
+								}
+							]
+						},
+						"description": "Request query\n\n``` json\n{\n    \"articleId\" : \"nullable|string\",\n    \"startAt\": \"nullable|date\",\n    \"endAt\": \"nullable|date\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/page-views/count?articleId=685ea2e40445a63e16b44274&startAt=2025-06-21T14:15:39.639Z&endAt=2025-06-29T14:48:05.826Z",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"page-views",
+										"count"
+									],
+									"query": [
+										{
+											"key": "articleId",
+											"value": "685ea2e40445a63e16b44274"
+										},
+										{
+											"key": "startAt",
+											"value": "2025-06-21T14:15:39.639Z"
+										},
+										{
+											"key": "endAt",
+											"value": "2025-06-29T14:48:05.826Z"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "990"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 14:52:00 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751035940"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "990"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "20"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "23864847-07ab-4ba5-b288-1fa7aca38b4f"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-0xEJeL3Po43nLsM6WqP+9OzA6L0\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": 2,\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/page-views/count?articleId=685ea2e40445a63e16b44274&startAt=2025-06-21T14:15:39.639Z&endAt=2025-06-29T14:48:05.826Z",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"page-views",
+										"count"
+									],
+									"query": [
+										{
+											"key": "articleId",
+											"value": "685ea2e40445a63e16b44274"
+										},
+										{
+											"key": "startAt",
+											"value": "2025-06-21T14:15:39.639Z"
+										},
+										{
+											"key": "endAt",
+											"value": "2025-06-29T14:48:05.826Z"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 14:52:28 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751036009"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "c0e979a9-a768-417f-a36e-db01396202e2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-l72wtIBHI+1ENQGw6Q81HpwzLk4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Unauthorized\",\n    \"data\": null,\n    \"statusCode\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Aggregate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/page-views/aggregate-date?articleId=685ea2e40445a63e16b44274&startAt=2025-06-27T14:15:39.639Z&endAt=2025-06-28T14:48:05.826Z&interval=daily",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"page-views",
+								"aggregate-date"
+							],
+							"query": [
+								{
+									"key": "articleId",
+									"value": "685ea2e40445a63e16b44274"
+								},
+								{
+									"key": "startAt",
+									"value": "2025-06-27T14:15:39.639Z"
+								},
+								{
+									"key": "endAt",
+									"value": "2025-06-28T14:48:05.826Z"
+								},
+								{
+									"key": "interval",
+									"value": "daily"
+								}
+							]
+						},
+						"description": "Request query\n\n``` json\n{\n    \"articleId\" : \"nullable|string\",\n    \"startAt\": \"nullable|date\",\n    \"endAt\": \"nullable|date\",\n    \"interval\": \"required|enum:hourly,daily,monthly\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "200 OK Monthly",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/page-views/aggregate-date?articleId=685ea2e40445a63e16b44274&startAt=2025-06-27T14:15:39.639Z&endAt=2025-06-28T14:48:05.826Z&interval=monthly",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"page-views",
+										"aggregate-date"
+									],
+									"query": [
+										{
+											"key": "articleId",
+											"value": "685ea2e40445a63e16b44274"
+										},
+										{
+											"key": "startAt",
+											"value": "2025-06-27T14:15:39.639Z"
+										},
+										{
+											"key": "endAt",
+											"value": "2025-06-28T14:48:05.826Z"
+										},
+										{
+											"key": "interval",
+											"value": "monthly"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "996"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 15:27:29 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751038092"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "996"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "42"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "f4d115c0-9dbd-4223-8b80-3e045fd31688"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-yYCNW2qVwzHid98wCGpyvQK5Q6E\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"2025-06\": 2\n    },\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "200 OK Hourly",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/page-views/aggregate-date?articleId=685ea2e40445a63e16b44274&startAt=2025-06-27T14:15:39.639Z&endAt=2025-06-28T14:48:05.826Z&interval=hourly",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"page-views",
+										"aggregate-date"
+									],
+									"query": [
+										{
+											"key": "articleId",
+											"value": "685ea2e40445a63e16b44274"
+										},
+										{
+											"key": "startAt",
+											"value": "2025-06-27T14:15:39.639Z"
+										},
+										{
+											"key": "endAt",
+											"value": "2025-06-28T14:48:05.826Z"
+										},
+										{
+											"key": "interval",
+											"value": "hourly"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "995"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 15:27:51 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751038092"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "995"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "20"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "e79c51b4-8f65-4b68-9904-e90999a2f881"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-qALyGVX0BAZFT99IDuUYqxQR0+A\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"14:00\": 2\n    },\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "200 OK Daily",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/page-views/aggregate-date?articleId=685ea2e40445a63e16b44274&startAt=2025-06-27T14:15:39.639Z&endAt=2025-06-28T14:48:05.826Z&interval=daily",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"page-views",
+										"aggregate-date"
+									],
+									"query": [
+										{
+											"key": "articleId",
+											"value": "685ea2e40445a63e16b44274"
+										},
+										{
+											"key": "startAt",
+											"value": "2025-06-27T14:15:39.639Z"
+										},
+										{
+											"key": "endAt",
+											"value": "2025-06-28T14:48:05.826Z"
+										},
+										{
+											"key": "interval",
+											"value": "daily"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 15:28:13 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751038154"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "999"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "7841479a-008d-49ad-8170-6289f14c7f77"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"55-kuQYQd5OSiD3PCnT7Vx6TIVqzII\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request success\",\n    \"data\": {\n        \"2025-06-27\": 2\n    },\n    \"statusCode\": 200\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/page-views/aggregate-date?articleId=685ea2e40445a63e16b44274&startAt=2025-06-27T14:15:39.639Z&endAt=2025-06-28T14:48:05.826Z&interval=daily",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"page-views",
+										"aggregate-date"
+									],
+									"query": [
+										{
+											"key": "articleId",
+											"value": "685ea2e40445a63e16b44274"
+										},
+										{
+											"key": "startAt",
+											"value": "2025-06-27T14:15:39.639Z"
+										},
+										{
+											"key": "endAt",
+											"value": "2025-06-28T14:48:05.826Z"
+										},
+										{
+											"key": "interval",
+											"value": "daily"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 15:28:52 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751038154"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "1000;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "1000"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "998"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "21"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "7c419072-4f27-40a2-b270-98eeaae4cf85"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-l72wtIBHI+1ENQGw6Q81HpwzLk4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Unauthorized\",\n    \"data\": null,\n    \"statusCode\": 401\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "CommonJS",
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": [
+                "*"
+            ]
+        },
+        "moduleResolution": "Node",
+        "outDir": "dist",
+        "importsNotUsedAsValues": "remove",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "types": [
+            "vitest/globals"
+        ],
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "src/**/*",
+        "vitest.*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
